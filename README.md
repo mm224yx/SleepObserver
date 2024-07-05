@@ -55,7 +55,7 @@ The code is realtively simple, but to make it a little more advanced I used pyRT
 
 ## Transmitting Data
 The data is sent only when sound and/or movement is detected, and with the use of RTOS I was able to make it so that both data of the sound and movement sensor can be sent at the same time and also they measure virtually at the same time.
-I used Wifi to then send my data via MQTT.
+I used Wifi to then send my data via MQTT. The data is sent whenever the sensors detect something, so it all depends on how much someone moves or how much noise they make before quota is met.
 
 ## Presenting Data
 The data is presented in numerical value with a timestamp every time the data is sent. The data is also categorized so that you can view all data, just sound data or just movement data, this is done using different topics when publishing the data. The data is saved on MQTTX, and the amount of instances detected get reset every time the device itself is reset.
